@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/animation/sword_2/output/frame_95",
+  "textures": {
+    "layer0": "minecraft:item/wooden_hoe"
+  }
+}
