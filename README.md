@@ -1,5 +1,5 @@
 # minespect
-![](https://img.shields.io/badge/animated%20models-0.6%25-critical)
+![](https://img.shields.io/badge/animated%20models-3%25-critical)
 
 minespect adds the inspect weapon functionality from CoD, CS, and TF2 into vanilla Minecraft (no mods required).
 
