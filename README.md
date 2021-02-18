@@ -10,7 +10,6 @@ minespect adds the inspect weapon functionality from CoD, CS, and TF2 into vanil
 [2]:  https://github.com/torshepherd/minespect/releases/latest/download/datapack.zip
 [3]:  https://img.shields.io/badge/-resourcepack-blueviolet
 [4]:  https://github.com/torshepherd/minespect/releases/latest/download/resourcepack.zip
-
 1. Download the datapack to .minecraft/saves/YOURWORLD/datapacks
 1. Download the resourcepack to .minecraft/resourcepacks
 1. That's it!
