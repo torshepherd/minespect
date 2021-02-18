@@ -62,7 +62,7 @@ def read_frame(animation_name, frame_id, key=True):
     if key:
         middle_path = 'key'
     points = {}
-    with open(os.path.join(PATH_TO_MODELS, 'item/{}/{}/frame_{}.json'.format(animation_name, middle_path, frame_id))) as frame_file:
+    with open(os.path.join(PATH_TO_MODELS, 'item/animation/{}/{}/frame_{}.json'.format(animation_name, middle_path, frame_id))) as frame_file:
         data = json.load(frame_file)
         for key in data['display'].keys():
             points[key] = np.array(data['display'][key]['rotation'] + data['display']
@@ -75,7 +75,7 @@ def write_frame(point, animation_name, frame_id, model_parent='handheld', key=Fa
     middle_path = 'output'
     if key:
         middle_path = 'key'
-    with open(os.path.join(PATH_TO_MODELS, 'item/{}/{}/frame_{}.json'.format(animation_name, middle_path, frame_id)), 'w+') as frame_file:
+    with open(os.path.join(PATH_TO_MODELS, 'item/animation/{}/{}/frame_{}.json'.format(animation_name, middle_path, frame_id)), 'w+') as frame_file:
         data = {
             'parent': 'minecraft:item/{}'.format(model_parent), 'display': {}}
         if 'firstperson_righthand' in point.keys():
@@ -109,12 +109,12 @@ def create_animation_from_timeline(animation_name, model_parent='handheld', verb
     seed = SEED
     printv('Removing {} output folder...'.format(animation_name), VERBOSITY_EXPLAIN, verbosity)
     try:
-        shutil.rmtree(os.path.join(PATH_TO_MODELS, 'item/{}/output'.format(animation_name)))
+        shutil.rmtree(os.path.join(PATH_TO_MODELS, 'item/animation/{}/output'.format(animation_name)))
     except:
         pass
     printv('Creating {} output folder...'.format(animation_name), VERBOSITY_EXPLAIN, verbosity)
-    os.mkdir(os.path.join(PATH_TO_MODELS, 'item/{}/output'.format(animation_name)))
-    with open(os.path.join(PATH_TO_MODELS, 'item/{}/key/timeline.json'.format(animation_name))) as timeline_file:
+    os.mkdir(os.path.join(PATH_TO_MODELS, 'item/animation/{}/output'.format(animation_name)))
+    with open(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/timeline.json'.format(animation_name))) as timeline_file:
         timeline = json.load(timeline_file)
         offset = 0
         for section in timeline['sections']:
@@ -145,7 +145,7 @@ def create_animation_from_timeline(animation_name, model_parent='handheld', verb
 
                     write_all_frames(start_point, animation_name, offset, section['frames'], n9, model_parent, verbosity)
 
-                    shutil.copy(os.path.join(PATH_TO_MODELS, 'item/{}/output/frame_{}.json'.format(animation_name, offset + section['frames'])), os.path.join(PATH_TO_MODELS, 'item/{}/key/frame_generated.json'.format(animation_name)))
+                    shutil.copy(os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/frame_{}.json'.format(animation_name, offset + section['frames'])), os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/frame_generated.json'.format(animation_name)))
                 else:
                     raise Exception('Perlin paths cannot include the key \'end_frame\'.')
             offset += section['frames']
@@ -155,7 +155,7 @@ def create_animation_from_timeline(animation_name, model_parent='handheld', verb
 
 def write_model_file(name, num_frames, model_parent='handheld', textured=True, verbosity=VERBOSITY_EXPLAIN):
     printv('Opening example, constructing model file...', VERBOSITY_EXPLAIN, verbosity)
-    with open('example_item.json') as example_file:
+    with open(os.path.join(PATH_TO_SRC, 'example_item.json')) as example_file:
         data = json.load(example_file)
 
         data['parent'] += model_parent
@@ -164,7 +164,7 @@ def write_model_file(name, num_frames, model_parent='handheld', textured=True, v
         data['overrides'] = []
         for i in range(num_frames):
             frame_json_obj = {'predicate': {'custom_model_data': i + 1},
-                              'model': 'item/inspect_{}/frame_{}'.format(name, i + 1)}
+                              'model': 'item/inspect/{}/frame_{}'.format(name, i + 1)}
             data['overrides'].append(frame_json_obj)
 
         # We want to open the file, read the contents, and append to it, not overwrite
@@ -183,23 +183,23 @@ def write_model_file(name, num_frames, model_parent='handheld', textured=True, v
 
 
 def write_animation_folder(name, num_frames, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
-    printv('Removing inspect_{} folder...'.format(name), VERBOSITY_EXPLAIN, verbosity)
+    printv('Removing inspect/{} folder...'.format(name), VERBOSITY_EXPLAIN, verbosity)
     try:
-        shutil.rmtree(os.path.join(PATH_TO_MODELS, 'item/inspect_{}'.format(name)))
+        shutil.rmtree(os.path.join(PATH_TO_MODELS, 'item/inspect/{}'.format(name)))
     except:
         pass
-    printv('Creating inspect_{} folder...'.format(name), VERBOSITY_EXPLAIN, verbosity)
-    os.mkdir(os.path.join(PATH_TO_MODELS, 'item/inspect_{}'.format(name)))
+    printv('Creating inspect/{} folder...'.format(name), VERBOSITY_EXPLAIN, verbosity)
+    os.mkdir(os.path.join(PATH_TO_MODELS, 'item/inspect/{}'.format(name)))
     for i in range(num_frames):
-        data = {'parent': 'minecraft:item/{}/output/frame_{}'.format(animation_name, i + 1),
+        data = {'parent': 'minecraft:item/animation/{}/output/frame_{}'.format(animation_name, i + 1),
                 'textures': {'layer0': 'minecraft:item/{}'.format(name)}}
-        printv('Writing inspect_{}/frame_{}.json...'.format(name, i + 1), VERBOSITY_EXPLAIN, verbosity)
-        with open(os.path.join(PATH_TO_MODELS, 'item/inspect_{}/frame_{}.json'.format(name, i + 1)), 'w+') as frame_file:
+        printv('Writing inspect/{}/frame_{}.json...'.format(name, i + 1), VERBOSITY_EXPLAIN, verbosity)
+        with open(os.path.join(PATH_TO_MODELS, 'item/inspect/{}/frame_{}.json'.format(name, i + 1)), 'w+') as frame_file:
             json.dump(data, frame_file, indent=2)
 
 
 def write_model(name, model_parent='handheld', textured=True, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
-    num_frames = len([name for name in os.listdir(os.path.join(PATH_TO_MODELS, 'item/{}/output'.format(animation_name)))])
+    num_frames = len([name for name in os.listdir(os.path.join(PATH_TO_MODELS, 'item/animation/{}/output'.format(animation_name)))])
     
     if num_frames > 0:
         write_model_file(name, num_frames, model_parent, textured, verbosity)
