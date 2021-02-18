@@ -1,0 +1,25 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "What's this?",
+            "color": "black",
+            "bold": false
+        },
+        "description": {
+            "text": "Inspect something."
+        },
+        "icon": {
+            "item": "minecraft:iron_sword"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "inspect": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+[
+    {
+        "function": "copy_nbt",
+        "source": {
+            "type": "storage",
+            "source": "inspect:slide"
+        },
+        "ops": [
+            {
+                "source": "value",
+                "target": "CustomModelData",
+                "op": "replace"
+            }
+        ]
+    }
+]

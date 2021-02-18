@@ -1,0 +1,22 @@
+{
+  "sections": [
+    {
+      "frames": 25,
+      "type": "cubic",
+      "start_frame": 1,
+      "end_frame": 2
+    },
+    {
+      "frames": 30,
+      "type": "cubic",
+      "start_frame": 2,
+      "end_frame": 2
+    },
+    {
+      "frames": 15,
+      "type": "cubic",
+      "start_frame": 2,
+      "end_frame": 1
+    }
+  ]
+}

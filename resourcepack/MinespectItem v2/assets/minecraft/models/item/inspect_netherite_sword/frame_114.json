@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/sword_animation_2/output/frame_114",
+  "textures": {
+    "layer0": "minecraft:item/netherite_sword"
+  }
+}
