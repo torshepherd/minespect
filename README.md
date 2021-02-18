@@ -3,6 +3,8 @@
 
 minespect adds the inspect weapon functionality from CoD, CS, and TF2 into vanilla Minecraft (no mods required).
 
+Currently, only Java edition is supported.
+
 ## Installing
 [![homepage][1]][2] [![homepage][3]][4]
 
@@ -12,7 +14,8 @@ minespect adds the inspect weapon functionality from CoD, CS, and TF2 into vanil
 [4]:  https://github.com/torshepherd/minespect/releases/latest/download/resourcepack.zip
 1. Download the datapack to .minecraft/saves/YOURWORLD/datapacks
 1. Download the resourcepack to .minecraft/resourcepacks
-1. That's it!
+
+If you're not sure where to 
 
 ## Usage
 For now, the only functionality is to type ```/function inspect:inspect``` into the chat
