@@ -14,7 +14,11 @@ SEED = 1
 
 N_DECIMALS = 4
 
-PATH_TO_MODELS = os.path.join(os.getcwd(), 'assets/minecraft/models')
+PATH_TO_SRC = os.path.dirname(os.path.realpath(__file__))
+PATH_TO_LOG = os.path.join(PATH_TO_SRC, 'log')
+PATH_TO_RESOURCEPACK = os.path.join(PATH_TO_SRC, 'resourcepack')
+PATH_TO_DATAPACK = os.path.join(PATH_TO_SRC, 'datapack')
+PATH_TO_MODELS = os.path.join(PATH_TO_RESOURCEPACK, 'assets/minecraft/models')
 
 def printv(text, verbosity_needed=VERBOSITY_EXPLAIN, verbosity=VERBOSITY_EXPLAIN):
     if verbosity >= verbosity_needed:
