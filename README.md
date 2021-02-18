@@ -18,4 +18,4 @@ Currently, only Java edition is supported.
 If you're not sure where to find .minecraft/, pause the game and select 'Resource Packs'. From there, select 'Open Resource Pack Folder' and navigate up one level.
 
 ## Usage
-For now, the only functionality is to type ```/function inspect:inspect``` into the chat
+For now, the only functionality is to type ```/function inspect:inspect``` into the chat. If you forget the command, type ```/reload``` and click the prompt.
