@@ -7,14 +7,15 @@ Currently, only Java edition 1.17 (snapshot 21w07a) is supported.
 
 ## Installing
 [![homepage][1]][2]
+
 [![homepage][3]][4]
 
 [1]:  https://img.shields.io/badge/-datapack-854f2b
 [2]:  https://github.com/torshepherd/minespect/releases/latest/download/datapack.zip
 [3]:  https://img.shields.io/badge/-resourcepack-70b237
 [4]:  https://github.com/torshepherd/minespect/releases/latest/download/resourcepack.zip
-1. Download the datapack to .minecraft/saves/YOURWORLD/datapacks
 1. Download the resourcepack to .minecraft/resourcepacks
+1. Download the datapack to .minecraft/saves/YOURWORLD/datapacks
 
 If you're not sure where to find .minecraft/, pause the game and select 'Resource Packs'. From there, select 'Open Resource Pack Folder' and navigate up one level.
 
