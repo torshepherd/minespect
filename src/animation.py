@@ -114,10 +114,10 @@ def write_all_frames(start_point, animation_name, frame_offset, num_frames, path
 
 
 def create_animation_from_timeline(animation_name, overwrite=False, verbosity=VERBOSITY_EXPLAIN):
-    if os.path.exists(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/build.json'.format(animation_name))):
+    if os.path.exists(os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/build.json'.format(animation_name))):
         printv('Found build file for animation {}...'.format(
             animation_name), VERBOSITY_EXPLAIN, verbosity)
-        if filecmp.cmp(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/timeline.json'.format(animation_name)), os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/build.json'.format(animation_name))):
+        if filecmp.cmp(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/timeline.json'.format(animation_name)), os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/build.json'.format(animation_name))):
             if not overwrite:
                 printv('Timeline is unchanged for animation {}, skipping...'.format(
                     animation_name), VERBOSITY_EXPLAIN, verbosity)
@@ -141,8 +141,12 @@ def create_animation_from_timeline(animation_name, overwrite=False, verbosity=VE
         for section in timeline['sections']:
             if section['type'] == 'cubic':
                 if (section['end_frame'] != 'generated') and (type(section['end_frame']) == int):
-                    start_point = read_frame(
-                        animation_name, section['start_frame'])
+                    if section['start_frame'] == 'generated':
+                        start_point = read_frame(
+                            animation_name, 'generated', key=False)
+                    else:
+                        start_point = read_frame(
+                            animation_name, section['start_frame'])
                     end_point = read_frame(
                         animation_name, section['end_frame'])
 
@@ -177,51 +181,47 @@ def create_animation_from_timeline(animation_name, overwrite=False, verbosity=VE
                                      section['frames'], n9, model_parent, verbosity)
 
                     shutil.copy(os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/frame_{}.json'.format(animation_name, offset +
-                                                                                                             section['frames'])), os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/frame_generated.json'.format(animation_name)))
+                                                                                                             section['frames'])), os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/frame_generated.json'.format(animation_name)))
                 else:
                     raise Exception(
                         'Perlin paths cannot include the key \'end_frame\'.')
             offset += section['frames']
 
     shutil.copy(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/timeline.json'.format(animation_name)),
-                os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/build.json'.format(animation_name)))
+                os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/build.json'.format(animation_name)))
 
 # Creating new filetree for new model -------------------------------------------------------
 
 
-def write_model_file(name, layer0_name, num_frames, model_parent='handheld', textured=True, verbosity=VERBOSITY_EXPLAIN):
-    printv('Opening example, constructing model file...',
-           VERBOSITY_EXPLAIN, verbosity)
-    with open(os.path.join(PATH_TO_SRC, 'example_item.json')) as example_file:
-        data = json.load(example_file)
+def write_model_file(name, layer0_name, num_frames, example_data, model_parent='minecraft:item/handheld', textured=True, verbosity=VERBOSITY_EXPLAIN):
+    data = example_data.copy()
+    data['parent'] = model_parent
+    if textured:
+        data['textures'] = {'layer0': '{}'.format(layer0_name)}
+    data['overrides'] = []
+    for i in range(num_frames):
+        frame_json_obj = {'predicate': {'custom_model_data': i + 1},
+                            'model': 'item/inspect/{}/frame_{}'.format(name, i + 1)}
+        data['overrides'].append(frame_json_obj)
 
-        data['parent'] += model_parent
-        if textured:
-            data['textures'] = {'layer0': '{}'.format(layer0_name)}
-        data['overrides'] = []
-        for i in range(num_frames):
-            frame_json_obj = {'predicate': {'custom_model_data': i + 1},
-                              'model': 'item/inspect/{}/frame_{}'.format(name, i + 1)}
-            data['overrides'].append(frame_json_obj)
-
-        # We want to open the file, read the contents, and append to it, not overwrite
-        if os.path.exists(os.path.join(PATH_TO_MODELS, 'item/{}.json'.format(name))):
-            with open(os.path.join(PATH_TO_MODELS, 'item/{}.json'.format(name))) as model_file:
-                data_previous = json.load(model_file)
-                printv('{}.json exists, appending to it...'.format(
-                    name), VERBOSITY_EXPLAIN, verbosity)
-                for key in data_previous.keys():
-                    if not (key in data.keys()):
-                        data[key] = data_previous[key]
-            # TODO: Implement this properly, currently we overwrite all contents. won't work for handheld for example, also uses texture not necessary
-        printv('Writing base json file for item {}...'.format(
-            name), VERBOSITY_EXPLAIN, verbosity)
-        printv(json.dumps(data, indent=2), VERBOSITY_ALL_OUTPUT, verbosity)
-        with open(os.path.join(PATH_TO_MODELS, 'item/{}.json'.format(name)), 'w+') as model_file:
-            json.dump(data, model_file, indent=2)
+    # We want to open the file, read the contents, and append to it, not overwrite
+    if os.path.exists(os.path.join(PATH_TO_MODELS, 'item/{}.json'.format(name))):
+        with open(os.path.join(PATH_TO_MODELS, 'item/{}.json'.format(name))) as model_file:
+            data_previous = json.load(model_file)
+            # printv('{}.json exists, appending to it...'.format(
+            #     name), VERBOSITY_EXPLAIN, verbosity)
+            for key in data_previous.keys():
+                if not (key in data.keys()):
+                    data[key] = data_previous[key]
+        # TODO: Implement this properly, currently we overwrite all contents. won't work for handheld for example, also uses texture not necessary
+    printv('Writing base json file for item {}...'.format(
+        name), VERBOSITY_EXPLAIN, verbosity)
+    printv(json.dumps(data, indent=2), VERBOSITY_ALL_OUTPUT, verbosity)
+    with open(os.path.join(PATH_TO_MODELS, 'item/{}.json'.format(name)), 'w+') as model_file:
+        json.dump(data, model_file, indent=2)
 
 
-def write_animation_folder(name, layer0_name, num_frames, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
+def write_animation_folder(name, layer0_name, num_frames, animation_name='item_1', verbosity=VERBOSITY_EXPLAIN):
     printv('Removing inspect/{} folder...'.format(name),
            VERBOSITY_EXPLAIN, verbosity)
     try:
@@ -241,13 +241,16 @@ def write_animation_folder(name, layer0_name, num_frames, animation_name='sword_
             json.dump(data, frame_file, indent=2)
 
 
-def write_model(name, layer0_name, model_parent='handheld', textured=True, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
+def write_model(name, layer0_name, example_data, model_parent='minecraft:item/handheld', textured=True, animation_name='item_1', verbosity=VERBOSITY_EXPLAIN):
     num_frames = len([name for name in os.listdir(os.path.join(
-        PATH_TO_MODELS, 'item/animation/{}/output'.format(animation_name)))])
+        PATH_TO_MODELS, 'item/animation/{}/output'.format(animation_name))) if name[6:-5].isnumeric()])
 
     if num_frames > 0:
-        write_model_file(name, layer0_name, num_frames, model_parent, textured, verbosity)
-        write_animation_folder(name, layer0_name, num_frames, animation_name, VERBOSITY_QUIET)
+        write_model_file(name, layer0_name, num_frames, example_data,
+                         model_parent, textured, VERBOSITY_QUIET)
+        write_animation_folder(name, layer0_name, num_frames,
+                               animation_name, VERBOSITY_QUIET)
+        printv('Creating animation {} for item {}...'.format(animation_name, name), VERBOSITY_EXPLAIN, verbosity)
     else:
         raise Exception('Number of frames must be greater than zero.')
 
@@ -302,10 +305,26 @@ def create_all_animations(overwrite=False, verbosity=VERBOSITY_EXPLAIN):
         with open(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/timeline.json'.format(animation_name))) as timeline_file:
             timeline = json.load(timeline_file)
             animation_pairing[timeline['parent']] = animation_name
-            
-    input('{}'.format(animation_pairing))
-        
+    
+    printv('Opening example, constructing model file...',
+        VERBOSITY_EXPLAIN, verbosity)
+    example_data = {}
+    with open(os.path.join(PATH_TO_SRC, 'example_item.json')) as example_file:
+        example_data = json.load(example_file)
+    
     for item in overview.keys():
         if ('parent' in overview[item].keys()) and ('parent' in overview[item].keys()):
             if overview[item]['parent'] in animation_pairing.keys():
-                write_model(item, overview[item]['layer0'], animation_name=animation_pairing[overview[item]['parent']])
+                write_model(
+                    item, overview[item]['layer0'], example_data, overview[item]['parent'], animation_name=animation_pairing[overview[item]['parent']])
+
+# Miscellaneous utils -------------------------------------------------------------------------
+
+
+def print_progress(fraction, width=25, empty_char=' ', fill_char='=', endcaps='[]', percent_after=True):
+    progress = int(fraction * width)
+    left = width - progress
+    to_print = endcaps[0] + (progress * fill_char) + (left * empty_char) + endcaps[1]
+    # if percent_after:
+    #     to_print += ' {}%'.format(int(fraction * 100))
+    print('\r' + to_print, end='')

@@ -22,18 +22,28 @@ def zip_dir(src_path, archive_path):
     with open(os.path.join(PATH_TO_LOG, 'release.log'), 'a+') as releaselog:
         print('\n\nWriting {}'.format(archive_path), file=releaselog)
         with ZipFile(archive_path, 'w', ZIP_DEFLATED) as archive_file:
+            total_num_files = 0
+            num_zipped = 0
+            for dirpath, dirnames, filenames in os.walk(src_path):
+                for filename in filenames:
+                    total_num_files += 1
             for dirpath, dirnames, filenames in os.walk(src_path):
                 for filename in filenames:
                     file_path = os.path.join(dirpath, filename)
                     archive_file_path = os.path.relpath(file_path, src_path)
                     archive_file.write(file_path, archive_file_path)
                     print('Writing {} to {}'.format(filename, archive_file_path), file=releaselog)
-
+                    num_zipped += 1
+                    frac = num_zipped / total_num_files
+                    print_progress(frac, empty_char='-', fill_char='\u001b[32m=\u001b[0m')
+            print()
+            
 def main():
-    # build all animations specified in 
+    # build all animations specified 
     create_all_animations()
     
     # clear out downloads/
+    print('Done creating animations, clearing out downloads...')
     try:
         os.remove(PATH_TO_RESOURCEPACK_ZIP)
     except:
@@ -48,7 +58,9 @@ def main():
         pass
     
     # path to folder which needs to be zipped 
+    print('Zipping resource pack...')
     zip_dir(PATH_TO_RESOURCEPACK, PATH_TO_RESOURCEPACK_ZIP)
+    print('Zipping data pack...')
     zip_dir(PATH_TO_DATAPACK, PATH_TO_DATAPACK_ZIP)
 
 if __name__ == "__main__": 
