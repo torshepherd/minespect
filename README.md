@@ -6,7 +6,7 @@ minespect adds the inspect weapon functionality from CoD, CS, and TF2 into vanil
 Currently, only Java edition 1.17 (snapshot 21w07a) is supported.
 
 ## Installing
-[![homepage][1]][2] [![homepage][3]][4]
+[![homepage][1]][2][![homepage][3]][4]
 
 [1]:  https://img.shields.io/badge/-datapack-854f2b?style=for-the-badge
 [2]:  https://github.com/torshepherd/minespect/releases/latest/download/datapack.zip
@@ -34,4 +34,3 @@ For now, the only functionality is to type ```/function inspect:inspect``` into 
    3. Swirling XP orbs for mending tools?
 6. Multiple animations per item? Maybe select from menu?
 7. Ping system datapack...
-8. 
