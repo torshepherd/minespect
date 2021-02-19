@@ -1,1 +1,1 @@
-execute if entity @s[tag=idle] run function inspect:can_inspect
+execute if entity @s[tag=idle_right] run function inspect:inspect_right

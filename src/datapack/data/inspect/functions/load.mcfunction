@@ -1,3 +1,9 @@
+tag @a remove inspecting_right
+tag @a remove inspecting_left
+
+tag @a remove idle_right
+tag @a remove idle_left
+
 scoreboard objectives add inspect_anim minecraft.custom:minecraft.time_since_death
 scoreboard objectives add prev_slot dummy
 scoreboard objectives add current_slot dummy
