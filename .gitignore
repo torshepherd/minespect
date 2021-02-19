@@ -7,3 +7,4 @@ build.json
 frame_generated.json
 **/__pycache__
 pack.mcmeta
+**/log/
