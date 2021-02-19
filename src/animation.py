@@ -24,6 +24,7 @@ def printv(text, verbosity_needed=VERBOSITY_EXPLAIN, verbosity=VERBOSITY_EXPLAIN
     if verbosity >= verbosity_needed:
         print(text)
 
+# Creating animations -------------------------------------------------------
 
 def cubic_function_gen(start_point, end_point, frames: int):
     # cubic(t)           => c1(t)**3 + c2(t)**2 + c3t + c4
@@ -150,7 +151,7 @@ def create_animation_from_timeline(animation_name, model_parent='handheld', verb
                     raise Exception('Perlin paths cannot include the key \'end_frame\'.')
             offset += section['frames']
 
-# Creating new filetree for new model
+# Creating new filetree for new model -------------------------------------------------------
 
 
 def write_model_file(name, num_frames, model_parent='handheld', textured=True, verbosity=VERBOSITY_EXPLAIN):
@@ -207,7 +208,17 @@ def write_model(name, model_parent='handheld', textured=True, animation_name='sw
     else:
         raise Exception('Number of frames must be greater than zero.')
 
-# Open input frame json file
-# Open output frame json file
-# Generate cubic function mapping between them
-# Iterate over frames, generating each frame json file
+
+# Creating key json of all items in version -------------------------------------------------------
+def get_overview_of_models(path_to_dir):
+    total_data = {}
+    for model in os.listdir(path_to_dir):
+        with open(os.path.join(path_to_dir, model)) as model_file:
+            data = json.load(model_file)
+            if 'parent' in data.keys():
+                if data['parent'] not in total_data.keys():
+                    total_data[data['parent']] = []
+                total_data[data['parent']].append(os.path.splitext(model)[0])
+            
+    with open(os.path.join(PATH_TO_SRC, 'parents.json'), 'w+') as overview_file:
+        json.dump(total_data, overview_file, indent=2)

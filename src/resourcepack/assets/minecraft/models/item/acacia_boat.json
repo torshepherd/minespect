@@ -1,0 +1,428 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "item/inspect/acacia_boat/frame_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "item/inspect/acacia_boat/frame_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3
+      },
+      "model": "item/inspect/acacia_boat/frame_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4
+      },
+      "model": "item/inspect/acacia_boat/frame_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5
+      },
+      "model": "item/inspect/acacia_boat/frame_5"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 6
+      },
+      "model": "item/inspect/acacia_boat/frame_6"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7
+      },
+      "model": "item/inspect/acacia_boat/frame_7"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 8
+      },
+      "model": "item/inspect/acacia_boat/frame_8"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 9
+      },
+      "model": "item/inspect/acacia_boat/frame_9"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 10
+      },
+      "model": "item/inspect/acacia_boat/frame_10"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 11
+      },
+      "model": "item/inspect/acacia_boat/frame_11"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 12
+      },
+      "model": "item/inspect/acacia_boat/frame_12"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 13
+      },
+      "model": "item/inspect/acacia_boat/frame_13"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 14
+      },
+      "model": "item/inspect/acacia_boat/frame_14"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 15
+      },
+      "model": "item/inspect/acacia_boat/frame_15"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 16
+      },
+      "model": "item/inspect/acacia_boat/frame_16"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 17
+      },
+      "model": "item/inspect/acacia_boat/frame_17"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 18
+      },
+      "model": "item/inspect/acacia_boat/frame_18"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 19
+      },
+      "model": "item/inspect/acacia_boat/frame_19"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 20
+      },
+      "model": "item/inspect/acacia_boat/frame_20"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 21
+      },
+      "model": "item/inspect/acacia_boat/frame_21"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 22
+      },
+      "model": "item/inspect/acacia_boat/frame_22"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 23
+      },
+      "model": "item/inspect/acacia_boat/frame_23"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 24
+      },
+      "model": "item/inspect/acacia_boat/frame_24"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 25
+      },
+      "model": "item/inspect/acacia_boat/frame_25"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 26
+      },
+      "model": "item/inspect/acacia_boat/frame_26"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 27
+      },
+      "model": "item/inspect/acacia_boat/frame_27"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 28
+      },
+      "model": "item/inspect/acacia_boat/frame_28"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 29
+      },
+      "model": "item/inspect/acacia_boat/frame_29"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 30
+      },
+      "model": "item/inspect/acacia_boat/frame_30"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 31
+      },
+      "model": "item/inspect/acacia_boat/frame_31"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 32
+      },
+      "model": "item/inspect/acacia_boat/frame_32"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 33
+      },
+      "model": "item/inspect/acacia_boat/frame_33"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 34
+      },
+      "model": "item/inspect/acacia_boat/frame_34"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 35
+      },
+      "model": "item/inspect/acacia_boat/frame_35"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 36
+      },
+      "model": "item/inspect/acacia_boat/frame_36"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 37
+      },
+      "model": "item/inspect/acacia_boat/frame_37"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 38
+      },
+      "model": "item/inspect/acacia_boat/frame_38"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 39
+      },
+      "model": "item/inspect/acacia_boat/frame_39"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 40
+      },
+      "model": "item/inspect/acacia_boat/frame_40"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 41
+      },
+      "model": "item/inspect/acacia_boat/frame_41"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 42
+      },
+      "model": "item/inspect/acacia_boat/frame_42"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 43
+      },
+      "model": "item/inspect/acacia_boat/frame_43"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 44
+      },
+      "model": "item/inspect/acacia_boat/frame_44"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 45
+      },
+      "model": "item/inspect/acacia_boat/frame_45"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 46
+      },
+      "model": "item/inspect/acacia_boat/frame_46"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 47
+      },
+      "model": "item/inspect/acacia_boat/frame_47"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 48
+      },
+      "model": "item/inspect/acacia_boat/frame_48"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 49
+      },
+      "model": "item/inspect/acacia_boat/frame_49"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 50
+      },
+      "model": "item/inspect/acacia_boat/frame_50"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 51
+      },
+      "model": "item/inspect/acacia_boat/frame_51"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 52
+      },
+      "model": "item/inspect/acacia_boat/frame_52"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 53
+      },
+      "model": "item/inspect/acacia_boat/frame_53"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 54
+      },
+      "model": "item/inspect/acacia_boat/frame_54"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 55
+      },
+      "model": "item/inspect/acacia_boat/frame_55"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 56
+      },
+      "model": "item/inspect/acacia_boat/frame_56"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 57
+      },
+      "model": "item/inspect/acacia_boat/frame_57"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 58
+      },
+      "model": "item/inspect/acacia_boat/frame_58"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 59
+      },
+      "model": "item/inspect/acacia_boat/frame_59"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 60
+      },
+      "model": "item/inspect/acacia_boat/frame_60"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 61
+      },
+      "model": "item/inspect/acacia_boat/frame_61"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 62
+      },
+      "model": "item/inspect/acacia_boat/frame_62"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 63
+      },
+      "model": "item/inspect/acacia_boat/frame_63"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 64
+      },
+      "model": "item/inspect/acacia_boat/frame_64"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 65
+      },
+      "model": "item/inspect/acacia_boat/frame_65"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 66
+      },
+      "model": "item/inspect/acacia_boat/frame_66"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 67
+      },
+      "model": "item/inspect/acacia_boat/frame_67"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 68
+      },
+      "model": "item/inspect/acacia_boat/frame_68"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 69
+      },
+      "model": "item/inspect/acacia_boat/frame_69"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 70
+      },
+      "model": "item/inspect/acacia_boat/frame_70"
+    }
+  ],
+  "textures": {
+    "layer0": "minecraft:item/acacia_boat"
+  }
+}
