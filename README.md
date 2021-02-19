@@ -32,3 +32,6 @@ For now, the only functionality is to type ```/function inspect:inspect``` into 
    1. Add smoke particles to inspect fire aspect sword
    2. Fancy twirl for sharpness or efficiency tools
    3. Swirling XP orbs for mending tools?
+6. Multiple animations per item? Maybe select from menu?
+7. Ping system datapack...
+8. 
