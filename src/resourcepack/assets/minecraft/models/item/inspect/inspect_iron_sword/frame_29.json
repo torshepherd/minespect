@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/sword_animation_2/output/frame_29",
-  "textures": {
-    "layer0": "minecraft:item/iron_sword"
-  }
-}

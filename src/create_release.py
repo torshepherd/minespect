@@ -30,6 +30,9 @@ def zip_dir(src_path, archive_path):
                     print('Writing {} to {}'.format(filename, archive_file_path), file=releaselog)
 
 def main():
+    # build all animations specified in 
+    
+    
     # clear out downloads/
     try:
         os.remove(PATH_TO_RESOURCEPACK_ZIP)

@@ -1,3 +1,7 @@
 **/inspect/
 **/unused/
 *.zip
+**/item/*.json
+build.json
+**/output/
+frame_generated.json

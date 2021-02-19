@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/animation/item_1/output/frame_45",
-  "textures": {
-    "layer0": "minecraft:item/iron_hoe"
-  }
-}

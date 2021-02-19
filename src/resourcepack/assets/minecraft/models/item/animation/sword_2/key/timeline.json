@@ -1,4 +1,5 @@
 {
+  "parent": "minecraft:item/handheld",
   "sections": [
     {
       "frames": 25,

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/animation/sword_2/output/frame_1",
-  "textures": {
-    "layer0": "minecraft:item/wooden_pickaxe"
-  }
-}

@@ -420,6 +420,276 @@
         "custom_model_data": 70
       },
       "model": "item/inspect/stone_hoe/frame_70"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 71
+      },
+      "model": "item/inspect/stone_hoe/frame_71"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 72
+      },
+      "model": "item/inspect/stone_hoe/frame_72"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 73
+      },
+      "model": "item/inspect/stone_hoe/frame_73"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 74
+      },
+      "model": "item/inspect/stone_hoe/frame_74"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 75
+      },
+      "model": "item/inspect/stone_hoe/frame_75"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 76
+      },
+      "model": "item/inspect/stone_hoe/frame_76"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 77
+      },
+      "model": "item/inspect/stone_hoe/frame_77"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 78
+      },
+      "model": "item/inspect/stone_hoe/frame_78"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 79
+      },
+      "model": "item/inspect/stone_hoe/frame_79"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 80
+      },
+      "model": "item/inspect/stone_hoe/frame_80"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 81
+      },
+      "model": "item/inspect/stone_hoe/frame_81"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 82
+      },
+      "model": "item/inspect/stone_hoe/frame_82"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 83
+      },
+      "model": "item/inspect/stone_hoe/frame_83"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 84
+      },
+      "model": "item/inspect/stone_hoe/frame_84"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 85
+      },
+      "model": "item/inspect/stone_hoe/frame_85"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 86
+      },
+      "model": "item/inspect/stone_hoe/frame_86"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 87
+      },
+      "model": "item/inspect/stone_hoe/frame_87"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 88
+      },
+      "model": "item/inspect/stone_hoe/frame_88"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 89
+      },
+      "model": "item/inspect/stone_hoe/frame_89"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 90
+      },
+      "model": "item/inspect/stone_hoe/frame_90"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 91
+      },
+      "model": "item/inspect/stone_hoe/frame_91"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 92
+      },
+      "model": "item/inspect/stone_hoe/frame_92"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 93
+      },
+      "model": "item/inspect/stone_hoe/frame_93"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 94
+      },
+      "model": "item/inspect/stone_hoe/frame_94"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 95
+      },
+      "model": "item/inspect/stone_hoe/frame_95"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 96
+      },
+      "model": "item/inspect/stone_hoe/frame_96"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 97
+      },
+      "model": "item/inspect/stone_hoe/frame_97"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 98
+      },
+      "model": "item/inspect/stone_hoe/frame_98"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 99
+      },
+      "model": "item/inspect/stone_hoe/frame_99"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 100
+      },
+      "model": "item/inspect/stone_hoe/frame_100"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 101
+      },
+      "model": "item/inspect/stone_hoe/frame_101"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 102
+      },
+      "model": "item/inspect/stone_hoe/frame_102"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 103
+      },
+      "model": "item/inspect/stone_hoe/frame_103"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 104
+      },
+      "model": "item/inspect/stone_hoe/frame_104"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 105
+      },
+      "model": "item/inspect/stone_hoe/frame_105"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 106
+      },
+      "model": "item/inspect/stone_hoe/frame_106"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 107
+      },
+      "model": "item/inspect/stone_hoe/frame_107"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 108
+      },
+      "model": "item/inspect/stone_hoe/frame_108"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 109
+      },
+      "model": "item/inspect/stone_hoe/frame_109"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 110
+      },
+      "model": "item/inspect/stone_hoe/frame_110"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 111
+      },
+      "model": "item/inspect/stone_hoe/frame_111"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 112
+      },
+      "model": "item/inspect/stone_hoe/frame_112"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 113
+      },
+      "model": "item/inspect/stone_hoe/frame_113"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 114
+      },
+      "model": "item/inspect/stone_hoe/frame_114"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 115
+      },
+      "model": "item/inspect/stone_hoe/frame_115"
     }
   ],
   "textures": {
