@@ -6,9 +6,7 @@ minespect adds the inspect weapon functionality from CoD, CS, and TF2 into vanil
 Currently, only Java edition 1.17 (snapshot 21w07a) is supported.
 
 ## Installing
-[![homepage][1]][2]
-
-[![homepage][3]][4]
+[![homepage][1]][2] [![homepage][3]][4]
 
 [1]:  https://img.shields.io/badge/-datapack-854f2b
 [2]:  https://github.com/torshepherd/minespect/releases/latest/download/datapack.zip
