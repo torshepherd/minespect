@@ -6,3 +6,4 @@ build.json
 **/output/
 frame_generated.json
 **/__pycache__
+pack.mcmeta
