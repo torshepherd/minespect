@@ -189,7 +189,7 @@ def create_animation_from_timeline(animation_name, overwrite=False, verbosity=VE
 # Creating new filetree for new model -------------------------------------------------------
 
 
-def write_model_file(name, num_frames, model_parent='handheld', textured=True, verbosity=VERBOSITY_EXPLAIN):
+def write_model_file(name, layer0_name, num_frames, model_parent='handheld', textured=True, verbosity=VERBOSITY_EXPLAIN):
     printv('Opening example, constructing model file...',
            VERBOSITY_EXPLAIN, verbosity)
     with open(os.path.join(PATH_TO_SRC, 'example_item.json')) as example_file:
@@ -197,7 +197,7 @@ def write_model_file(name, num_frames, model_parent='handheld', textured=True, v
 
         data['parent'] += model_parent
         if textured:
-            data['textures'] = {'layer0': 'minecraft:item/{}'.format(name)}
+            data['textures'] = {'layer0': '{}'.format(layer0_name)}
         data['overrides'] = []
         for i in range(num_frames):
             frame_json_obj = {'predicate': {'custom_model_data': i + 1},
@@ -221,7 +221,7 @@ def write_model_file(name, num_frames, model_parent='handheld', textured=True, v
             json.dump(data, model_file, indent=2)
 
 
-def write_animation_folder(name, num_frames, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
+def write_animation_folder(name, layer0_name, num_frames, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
     printv('Removing inspect/{} folder...'.format(name),
            VERBOSITY_EXPLAIN, verbosity)
     try:
@@ -234,38 +234,44 @@ def write_animation_folder(name, num_frames, animation_name='sword_animation_1',
     os.mkdir(os.path.join(PATH_TO_MODELS, 'item/inspect/{}'.format(name)))
     for i in range(num_frames):
         data = {'parent': 'minecraft:item/animation/{}/output/frame_{}'.format(animation_name, i + 1),
-                'textures': {'layer0': 'minecraft:item/{}'.format(name)}}
+                'textures': {'layer0': '{}'.format(layer0_name)}}
         printv('Writing inspect/{}/frame_{}.json...'.format(name,
                                                             i + 1), VERBOSITY_EXPLAIN, verbosity)
         with open(os.path.join(PATH_TO_MODELS, 'item/inspect/{}/frame_{}.json'.format(name, i + 1)), 'w+') as frame_file:
             json.dump(data, frame_file, indent=2)
 
 
-def write_model(name, model_parent='handheld', textured=True, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
+def write_model(name, layer0_name, model_parent='handheld', textured=True, animation_name='sword_animation_1', verbosity=VERBOSITY_EXPLAIN):
     num_frames = len([name for name in os.listdir(os.path.join(
         PATH_TO_MODELS, 'item/animation/{}/output'.format(animation_name)))])
 
     if num_frames > 0:
-        write_model_file(name, num_frames, model_parent, textured, verbosity)
-        write_animation_folder(name, num_frames, animation_name, verbosity)
+        write_model_file(name, layer0_name, num_frames, model_parent, textured, verbosity)
+        write_animation_folder(name, layer0_name, num_frames, animation_name, VERBOSITY_QUIET)
     else:
         raise Exception('Number of frames must be greater than zero.')
 
 
 # Creating key json of all items in version -------------------------------------------------------
 def get_overview_of_models(path_to_dir, overwrite=False):
-    if (overwrite == False) and (os.path.exists(os.path.join(PATH_TO_SRC, 'parents.json'))):
+    if (overwrite == False) and (os.path.exists(os.path.join(PATH_TO_SRC, 'overview.json'))):
         return
     else:
         total_data = {}
         for model in os.listdir(path_to_dir):
             with open(os.path.join(path_to_dir, model)) as model_file:
                 data = json.load(model_file)
+                model_name = os.path.splitext(model)[0]
+                total_data[model_name] = {}
                 if 'parent' in data.keys():
-                    if data['parent'] not in total_data.keys():
-                        total_data[data['parent']] = []
-                    total_data[data['parent']].append(
-                        os.path.splitext(model)[0])
+                    total_data[model_name]['parent'] = data['parent']
+                if 'textures' in data.keys():
+                    if 'layer0' in data['textures'].keys():
+                        total_data[model_name]['layer0'] = data['textures']['layer0']
+                    # if data['parent'] not in total_data.keys():
+                    #     total_data[data['parent']] = []
+                    # total_data[data['parent']].append(
+                    #     os.path.splitext(model)[0])
 
         with open(os.path.join(PATH_TO_SRC, 'overview.json'), 'w+') as overview_file:
             json.dump(total_data, overview_file, indent=2)
@@ -285,14 +291,21 @@ def load_parents_file():
 
 def create_all_animations(overwrite=False, verbosity=VERBOSITY_EXPLAIN):
     get_overview_of_models(os.path.join(
-        PATH_TO_MODELS, 'item/unused/items_21w07a'))
+        PATH_TO_MODELS, 'item/unused/items_21w07a'), overwrite=True)
     overview = load_overview_file()
     animation_names = [d for d in os.listdir(os.path.join(
         PATH_TO_MODELS, 'item/animation')) if os.path.isdir(os.path.join(PATH_TO_MODELS, 'item/animation/{}'.format(d)))]
 
+    animation_pairing = {}
     for animation_name in animation_names:
         create_animation_from_timeline(animation_name, overwrite, verbosity)
         with open(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/timeline.json'.format(animation_name))) as timeline_file:
             timeline = json.load(timeline_file)
-            for item in overview[timeline['parent']]:
-                write_model(item, animation_name=animation_name)
+            animation_pairing[timeline['parent']] = animation_name
+            
+    input('{}'.format(animation_pairing))
+        
+    for item in overview.keys():
+        if ('parent' in overview[item].keys()) and ('parent' in overview[item].keys()):
+            if overview[item]['parent'] in animation_pairing.keys():
+                write_model(item, overview[item]['layer0'], animation_name=animation_pairing[overview[item]['parent']])

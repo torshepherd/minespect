@@ -7,7 +7,7 @@ All credit to cjbarth
 # importing required modules 
 from zipfile import ZipFile, ZIP_DEFLATED
 import os
-from animation import PATH_TO_SRC, PATH_TO_RESOURCEPACK, PATH_TO_DATAPACK, PATH_TO_LOG
+from animation import *
 
 PATH_TO_DOWNLOADS = os.path.join(os.path.dirname(PATH_TO_SRC), 'downloads')
 PATH_TO_RESOURCEPACK_ZIP = os.path.join(PATH_TO_DOWNLOADS, 'resourcepack.zip')
@@ -31,7 +31,7 @@ def zip_dir(src_path, archive_path):
 
 def main():
     # build all animations specified in 
-    
+    create_all_animations()
     
     # clear out downloads/
     try:
