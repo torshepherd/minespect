@@ -19,3 +19,16 @@ If you're not sure where to find .minecraft/, pause the game and select 'Resourc
 
 ## Usage
 For now, the only functionality is to type ```/function inspect:inspect``` into the chat. If you forget the command, type ```/reload``` and click the prompt.
+
+## Todo
+1. Fix attackSpeed modifier system, conditions
+2. Get length of animation somehow to know when to end, or just make all have same length
+3. Add inspecting left hand animation too
+   1. If tool in both hands, use second delayed scoreboard value for left hand animation
+   2. Else, just use regular scoreboard for left hand
+4. Add in keybind or other trigger for inspecting
+   1. Standing still for a while, bring up prompt in chat?
+5. Custom animations for enchanted items?
+   1. Add smoke particles to inspect fire aspect sword
+   2. Fancy twirl for sharpness or efficiency tools
+   3. Swirling XP orbs for mending tools?
