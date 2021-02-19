@@ -222,3 +222,7 @@ def get_overview_of_models(path_to_dir):
             
     with open(os.path.join(PATH_TO_SRC, 'parents.json'), 'w+') as overview_file:
         json.dump(total_data, overview_file, indent=2)
+
+def load_overview_file():
+    with open(os.path.join(PATH_TO_SRC, 'parents.json')) as overview_file:
+        return json.load(overview_file)

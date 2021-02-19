@@ -8,6 +8,8 @@ animation_name = 'sword_1'
 # create_animation_from_timeline('item_1', model_parent='generated')
 
 get_overview_of_models(os.path.join(PATH_TO_MODELS, 'item/unused/items_1_16_3'))
+data = load_overview_file()
+
 
 for item in ['wooden_sword',
              'stone_sword',
