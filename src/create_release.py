@@ -35,12 +35,12 @@ def zip_dir(src_path, archive_path):
                     print('Writing {} to {}'.format(filename, archive_file_path), file=releaselog)
                     num_zipped += 1
                     frac = num_zipped / total_num_files
-                    print_progress(frac, empty_char='-', fill_char='\u001b[32m=\u001b[0m')
+                    print_progress(frac, empty_char=' ', fill_char='\u001b[32m▧\u001b[0m')
             print()
             
 def main():
     # build all animations specified 
-    create_all_animations()
+    # create_all_animations()
     
     # clear out downloads/
     print('Done creating animations, clearing out downloads...')

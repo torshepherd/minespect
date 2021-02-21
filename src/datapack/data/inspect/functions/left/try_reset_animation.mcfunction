@@ -1,0 +1,3 @@
+# say Trying to reset animation (left)...
+execute as @s[nbt={Inventory:[{Slot: -106b, tag:{inspecting:1b}}]}] run function inspect:left/reset_animation
+execute as @s[nbt={Inventory:[{Slot: -106b, tag:{inspecting:2b}}]}] run function inspect:left/reset_animation

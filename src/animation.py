@@ -1,11 +1,13 @@
-from typing import Iterable
-import numpy as np
-import matplotlib.pyplot as plt
 import json
-from perlin_noise import PerlinNoise
 import os
 import shutil
 import filecmp
+
+from perlin_noise import PerlinNoise
+import numpy as np
+import matplotlib.pyplot as plt
+
+from typing import Iterable
 
 VERBOSITY_QUIET = 0
 VERBOSITY_EXPLAIN = 1
