@@ -1,5 +1,9 @@
-tag @a remove inspecting_right
+execute as @a run function inspect:right/tag_remove_inspecting
 tag @a remove inspecting_left
+tag @a remove inspecting_both
+
+tag @a add not_inspecting_left
+tag @a add not_inspecting_both
 
 tag @a remove idle_right
 tag @a remove idle_left
