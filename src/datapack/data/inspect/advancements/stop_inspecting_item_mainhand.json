@@ -12,7 +12,7 @@
               "nbt": "{Tags:[\"not_inspecting_right\"]}",
               "equipment": {
                 "mainhand": {
-                  "nbt": "{inspecting:1}"
+                  "nbt": "{inspecting:1b}"
                 }
               }
             }

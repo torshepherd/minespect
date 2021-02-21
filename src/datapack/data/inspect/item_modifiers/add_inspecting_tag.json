@@ -1,6 +1,6 @@
 [
     {
       "function": "minecraft:set_nbt",
-      "tag": "{inspecting:1}"
+      "tag": "{inspecting:1b}"
     }
 ]

@@ -1,1 +1,2 @@
-execute as @s[nbt={SelectedItem:{tag:{inspecting:1}}}] run function inspect:right/reset_animation
+say Trying to reset animation...
+execute as @s[nbt={SelectedItem:{tag:{inspecting:1b}}}] run function inspect:right/reset_animation
