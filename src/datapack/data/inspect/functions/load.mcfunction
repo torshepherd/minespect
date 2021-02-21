@@ -11,8 +11,10 @@ tag @a remove changed_slot
 tag @a remove swapped_hands
 
 # add scoreboard to track inspect animation frame number
-scoreboard objectives add anim_left minecraft.custom:minecraft.time_since_death
-scoreboard objectives add anim_right minecraft.custom:minecraft.time_since_death
+scoreboard objectives add anim_left dummy
+scoreboard objectives add anim_right dummy
+scoreboard objectives add check_left dummy
+scoreboard objectives add check_right dummy
 
 # add scoreboards to track current and previous SelectedItemSlot by players
 scoreboard objectives add prev_slot dummy
