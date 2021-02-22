@@ -1,6 +1,8 @@
 # minespect
 ![](https://img.shields.io/badge/animated%20models-48%25-yellow)
 
+![](demo.gif)
+
 minespect adds the inspect weapon functionality from CoD, CS, and TF2 into vanilla Minecraft (no mods required).
 
 Currently, only Java edition 1.17 (snapshot 21w07a) is supported.
