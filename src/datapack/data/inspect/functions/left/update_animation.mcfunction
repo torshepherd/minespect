@@ -3,5 +3,5 @@
 scoreboard players add @s anim_left 1
 
 execute store result storage inspect:slide value int 1 run scoreboard players get @s anim_left
-execute if score @s anim_left matches ..0 run data modify storage inspect:slide value set value 0
+#execute if score @s anim_left matches ..0 run data modify storage inspect:slide value set value 0
 item entity @s weapon.offhand modify inspect:increment_model_data

@@ -21,8 +21,8 @@ tag @s[tag=empty_left] remove idle_left
 #tag @s[tag=filled_left] remove idle_right
 
 # If inspecting, check whether current item has inspecting tag and CustomModelData equal to score
-execute as @s[tag=inspecting_right] run function inspect:right/update_idle
-execute as @s[tag=inspecting_left] run function inspect:left/update_idle
+execute as @s[tag=inspecting_right, tag=idle_right] run function inspect:right/update_idle
+execute as @s[tag=inspecting_left, tag=idle_left] run function inspect:left/update_idle
 
 # reset models for non-idle inspecting players
 tag @s[tag=inspecting_right, tag=!idle_right] add reset_right

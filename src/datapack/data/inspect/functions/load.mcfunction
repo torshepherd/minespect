@@ -24,4 +24,4 @@ scoreboard objectives add current_slot dummy
 execute as @a store result score @s current_slot run data get entity @s SelectedItemSlot
 execute as @a run scoreboard players operation @s prev_slot = @s current_slot
 
-tellraw @p {"text":"Click to inspect your current item.","underlined": true,"clickEvent":{"action":"run_command","value":"/function inspect:inspect"},"hoverEvent":{"action":"show_text","contents":{"text":"function inspect:inspect","bold":true,"color":"aqua"}}}
+tellraw @p {"text":"Click to inspect your current item.","underlined": true,"color":"aqua","clickEvent":{"action":"run_command","value":"/function inspect:inspect"},"hoverEvent":{"action":"show_text","contents":{"text":"function inspect:inspect","bold":true,"color":"aqua"}}}

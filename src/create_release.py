@@ -40,7 +40,7 @@ def zip_dir(src_path, archive_path):
             
 def main():
     # build all animations specified 
-    # create_all_animations()
+    create_all_animations()
     
     # clear out downloads/
     print('Done creating animations, clearing out downloads...')

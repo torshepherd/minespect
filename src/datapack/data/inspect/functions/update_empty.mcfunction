@@ -17,10 +17,10 @@ tag @s remove empty_left
 tag @s[nbt=!{SelectedItem:{}}] add empty_right
 tag @s[nbt=!{Inventory:[{Slot: -106b}]}] add empty_left
 
-execute as @s[tag=emptied_right] run say emptied_right
-execute as @s[tag=emptied_left] run say emptied_left
-execute as @s[tag=filled_right] run say filled_right
-execute as @s[tag=filled_left] run say filled_left
+# execute as @s[tag=emptied_right] run say emptied_right
+# execute as @s[tag=emptied_left] run say emptied_left
+# execute as @s[tag=filled_right] run say filled_right
+# execute as @s[tag=filled_left] run say filled_left
 
 tag @s[tag=filled_right] add reset_right
 tag @s[tag=filled_left] add reset_left
