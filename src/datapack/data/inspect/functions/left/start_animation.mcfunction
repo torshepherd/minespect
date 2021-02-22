@@ -2,5 +2,4 @@
 item entity @s weapon.offhand modify inspect:hide_modifiers
 item entity @s weapon.offhand modify inspect:negative_attack_speed
 item entity @s weapon.offhand modify inspect:add_inspecting_tag_left
-
-say Starting animation (left)...
+# say Starting animation (left)...

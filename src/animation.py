@@ -330,3 +330,6 @@ def print_progress(fraction, width=25, empty_char=' ', fill_char='=', endcaps='[
     # if percent_after:
     #     to_print += ' {}%'.format(int(fraction * 100))
     print('\r' + to_print, end='')
+
+if __name__ == "__main__": 
+    create_all_animations(overwrite=True)
