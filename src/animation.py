@@ -119,6 +119,7 @@ def create_animation_from_timeline(animation_name, overwrite=False, verbosity=VE
     if os.path.exists(os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/build.json'.format(animation_name))):
         printv('Found build file for animation {}...'.format(
             animation_name), VERBOSITY_EXPLAIN, verbosity)
+        #TODO: also check comparison with each key frame, not just timeline
         if filecmp.cmp(os.path.join(PATH_TO_MODELS, 'item/animation/{}/key/timeline.json'.format(animation_name)), os.path.join(PATH_TO_MODELS, 'item/animation/{}/output/build.json'.format(animation_name))):
             if not overwrite:
                 printv('Timeline is unchanged for animation {}, skipping...'.format(

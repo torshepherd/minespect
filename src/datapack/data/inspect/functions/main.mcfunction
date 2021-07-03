@@ -10,8 +10,8 @@ scoreboard players add @a[tag=inspecting_right] anim_right 1
 scoreboard players add @a[tag=inspecting_left] anim_left 1
 #execute as @a[tag=start_inspecting_right] run function inspect:right/try_start_animation
 #execute as @a[tag=start_inspecting_left] run function inspect:left/try_start_animation
-execute as @a[tag=inspecting_right] run function inspect:right/update_animation
-execute as @a[tag=inspecting_left] run function inspect:left/update_animation
+execute as @a[tag=inspecting_right] run function inspect:right/try_update_animation
+execute as @a[tag=inspecting_left] run function inspect:left/try_update_animation
 tag @a[tag=changed_slot] add reset_right
 
 # reset animations for non-idle players
